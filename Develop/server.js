@@ -1,7 +1,8 @@
+//Server start
+console.log("Server starting")
+
 //Dependecy
 const express = require("express");
-//const apiRoutes = require("./routes/api-routes");
-//const htmlRoutes = require("./routes/html-routes");
 
 //Config
 const app = express();
@@ -12,12 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-//Router
-require("./routes/api-routes");
-require("./routes/html-routes");
+//Routes
+//require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
 
+//Server listen
 app.listen(PORT, () => console.log(`Listening on Port: ${PORT}`));
 
-console.log("connected?");
-
-//look in index file
