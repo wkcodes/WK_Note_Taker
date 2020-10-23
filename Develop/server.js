@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Routes
-//require("./routes/api-routes")(app);
+require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
 //Server listen
